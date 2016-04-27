@@ -34,6 +34,30 @@
 
 ;树形递归
 
+(define (fib n)
+  	(cond 	((= n 0) 0) 
+  			((= n 1) 1) 
+  			(else (+ 
+  				(fib (- n 1))
+  				(fib (- n 2))))))
+
+
+;树形递归改迭代
+(define (fib_iter a b n)
+  	(if (= n 0) a 
+  		(fib_iter b (+ a b) (- n 1))))
+
+(define (fib2 n)
+  	(fib_iter 0 1 n))
+
+;exercise 1.11
+(define (f n)
+	(cond ((< n 3) n)
+	      (else (+
+	      		(f (- n 1))
+	      		(* 2 (f (- n 2)))
+	      		(* 3 (f (- n 3)))))))
+
 
 
 
