@@ -8,16 +8,39 @@
 
 
 
-
+;define a function
 (define (myadd x y)
 	(+ x y))
 
+;if
 (define (fact x)
 	(if (= x 1)
 		1
-		(* x (fact (- x 1))
-		)
-	)
-)
+		(* x (fact (- x 1)))))
+
+;call a function
+(myadd 12 12)
+
+
+; cond 
+; 线性递归
+(define (Ack x y)
+	(cond 	((= y 0) 0)
+	      	((= x 0) (* 2 y))
+	      	((= y 1) 2)
+	      	(else (Ack (- x 1) (Ack x (- y 1))))))
+
+;(Ack 1 10)
+
+;树形递归
+
+
+
+
+
+
+
+
+
 
 
